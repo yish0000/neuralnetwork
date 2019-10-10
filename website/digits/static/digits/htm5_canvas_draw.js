@@ -24,7 +24,7 @@ function InitThis() {
         mousePressed = false;
     });
 
-    clearArea()
+    clearArea();
 }
 
 function Draw(x, y, isDown) {
@@ -46,7 +46,7 @@ function clearArea() {
     // Use the identity matrix while clearing the canvas
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle="#000000";
+    ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
 
@@ -79,7 +79,7 @@ function IdentifyPic() {
      
     // Generate the image data
     var Pic = document.getElementById("myCanvas").toDataURL("image/png");
-    Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "")
+    Pic = Pic.replace(/^data:image\/(png|jpg);base64,/, "");
  
     // Sending the image data to Server
     $.ajax({
@@ -89,8 +89,8 @@ function IdentifyPic() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (msg) {
-            alert("result: " + msg.result);
-            clearArea()
+            alert("识别结果为：" + msg.result);
+            clearArea();
         }
     });
 }
