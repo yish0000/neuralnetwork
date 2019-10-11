@@ -1,2 +1,1 @@
-cd website
-python3 manage.py runserver yish.fun:80
+python3 website/manage.py runserver yish.fun:80
